@@ -1,12 +1,12 @@
-//Calculadora de pedidos com três funções encadeadas, 
+//Calculadora de pedidos com três funções encadeadas,
 //cada uma com responsabilidade única: calcular o subtotal, calcular o valor do desconto e
 //calcular o total final — o resultado de uma alimenta a próxima.
 
 //Terminou envia no o link do seu github aqui no chat....
 
-//Console 
- 
- /*
+//Console
+
+/*
 
 === Pedido ===
 Produto: Mochila
@@ -16,25 +16,31 @@ Total: R$ 204.00
 
 */
 
-double calcSubTotal({required double precoUnitario, required int quant}){
+double calcSubTotal({required double precoUnitario, required int quant}) {
   return precoUnitario * quant;
-} 
+}
 
-double calcValorDesconto(double precoSubTotal){
+double calcValorDesconto(double precoSubTotal) {
   return precoSubTotal * 0.15;
 }
 
-double calcTotalFinal({required double subTotal, required double desconto}){
+double calcTotalFinal({required double subTotal, required double desconto}) {
   return subTotal - desconto;
 }
 
-void main(){
+void main() {
   final String nomeProtudo = 'Mochila';
   final double precoUnitatio = 60.00;
   final int quant = 4;
-  final double subTotal = calcSubTotal(precoUnitario: precoUnitatio, quant: quant);
+  final double subTotal = calcSubTotal(
+    precoUnitario: precoUnitatio,
+    quant: quant,
+  );
   final double desconto = calcValorDesconto(subTotal);
-  final double totalFinal = calcTotalFinal(subTotal: subTotal, desconto: desconto);
+  final double totalFinal = calcTotalFinal(
+    subTotal: subTotal,
+    desconto: desconto,
+  );
 
   print('=== Pedido ===');
   print('Produto: ${nomeProtudo}');
